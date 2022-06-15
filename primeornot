@@ -1,0 +1,17 @@
+  public class PrimeNumberOrNot
+  {
+  public static void main(String[] args)
+  {
+  Scanner sc = new Scanner(System.in);
+  System.out.println("enter a number:");
+  int num= sc.nextInt();
+  System.out.println(isPrimeNumber(num));
+  }
+  public static boolean isPrimeNumber(int number) {
+  for(i=2; i<=Math.sqrt(Number);i++)
+  if(Number%i==0)
+  return false;
+
+  return true
+  }
+  }
