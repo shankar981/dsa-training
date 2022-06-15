@@ -1,0 +1,31 @@
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        
+        String result="";
+        for(int index=0;index<strs[0].length();index++)
+        {
+            int count=0;
+            for(int innerindex=1;innerindex<strs.length&&index<strs[innerindex].length()&&strs[0].charAt(index)==strs[innerindex].charAt(index);innerindex++)
+            {
+                        count++;
+            }
+            if(count==strs.length-1)
+                result=result+strs[0].charAt(index);
+            else
+                break;
+        }
+        return result;
+    }
+}
+
+/*
+
+url: https://leetcode.com/problems/longest-common-prefix/
+
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+*/
