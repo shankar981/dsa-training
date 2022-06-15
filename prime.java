@@ -8,11 +8,10 @@ public class Main{
         for(i=2; i<=Math.sqrt(Number);i++)
         {
             if(Number%i==0)
-                break;
+                return false;
+            
+            return true
         }
-        if(i==Math.sqrt(Number))
-            System.out.print(Number+" is prime");
-        else
-            System.out.print(Number+" is not prime");
+       
     }
 }
