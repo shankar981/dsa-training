@@ -10,7 +10,7 @@ public class Main{
             if(Number%i==0)
                 break;
         }
-        if(i==Number/2)
+        if(i==Math.sqrt(Number))
             System.out.print(Number+" is prime");
         else
             System.out.print(Number+" is not prime");
