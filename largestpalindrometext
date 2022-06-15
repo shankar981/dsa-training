@@ -1,0 +1,50 @@
+class Solution {
+    public String longestPalindrome(String s) {
+        int palindromelength=0;
+        String result="";
+        if(Ispalindrome(s))
+            return s;
+         else{
+              for(int index=0;index<s.length();index++)
+        {
+            for(int innerindex=index;innerindex<s.length();innerindex++)
+            {
+                if(s.charAt(index)==s.charAt(innerindex))
+                {
+                    if(Ispalindrome(s.substring(index,innerindex+1)))
+                    {
+                        if(s.substring(index,innerindex+1).length()>palindromelength)
+                        {
+                             result=result.replace(result,s.substring(index,innerindex+1));
+                            palindromelength=s.substring(index,innerindex+1).length();
+                        }
+                           
+                    }
+                }
+                    
+            }
+        }  
+         }
+        return result;
+    }
+    public boolean Ispalindrome(String Input)
+    {
+        for(int index=0;index<Input.length()/2;index++)
+        {
+            if(Input.charAt(index)!=Input.charAt(Input.length()-index-1))
+                return false;
+        }
+        return true;
+    }
+}
+
+/*
+link:- https://leetcode.com/problems/longest-palindromic-substring/
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+
+Input: s = "cbbd"
+Output: "bb"
+
+*/
