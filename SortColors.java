@@ -1,32 +1,33 @@
-class Solution {
+
+
+
+class SortColors {
     public void sortColors(int[] nums)
-    { 
-        
-        int firstindex = 0;
-        int highindex = nums.length - 1;
-        int midindex = 0, temp = 0;
-        while (midindex <= highindex) 
+    {
+
+        int first = 0, high = nums.length - 1,mid = 0, temp = 0;
+        while (mid <= high)
         {
-            switch (nums[midindex])
+            switch (nums[mid])
             {
                 case 0:
                 {
-                    temp = nums[firstindex];
-                    nums[firstindex] = nums[midindex];
-                    nums[midindex] = temp;
-                    firstindex++;
-                    midindex++;
+                    temp = nums[first];
+                    nums[first] = nums[mid];
+                    nums[mid] = temp;
+                    first++;
+                    mid++;
                     break;
                 }
                 case 1:
-                    midindex++;
+                    mid++;
                     break;
-                case 2: 
+                case 2:
                 {
-                    temp = nums[midindex];
-                    nums[midindex] = nums[highindex];
-                    nums[highindex] = temp;
-                    highindex--;
+                    temp = nums[mid];
+                    nums[mid] = nums[high];
+                    nums[high] = temp;
+                    high--;
                     break;
                 }
             }
